@@ -1,0 +1,454 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab title="Builds Dashboard" id="builds_dashboard">
+        <widget type="QLabel" role="title">
+            <text>Builds Dashboard</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+        <card>
+            <style>
+                .QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px;
+                }
+            </style>
+            <row>
+                <widget type="QLabel" role="subtitle">
+                    <text>Active Processes</text>
+                    <font_size>16</font_size>
+                    <font_weight>bold</font_weight>
+                    <style>
+                        QLabel { border: none; padding: 0px; }
+                    </style>
+                </widget>
+                <stretch />
+                <button type="button" role="btn_new_build">
+                    <text>New Build</text>
+                    <action>open_new_build_tab</action>
+                </button>
+                <button role="btn_refresh_dashboard">
+                    <icon>refresh</icon>
+                    <tooltip>Refresh Builds</tooltip>
+                </button>
+            </row>
+            <widget type="QScrollArea" role="processes_container">
+                <style>
+                    QScrollArea { border: none; background: transparent; min-height: 135px; }
+                    QWidget { background: transparent; }
+                </style>
+            </widget>
+        </card>
+        <card>
+            <style>
+                .QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px;
+                }
+            </style>
+            <row>
+                <widget type="QLabel" role="subtitle">
+                    <text>Downloaded builds</text>
+                    <font_size>16</font_size>
+                    <font_weight>bold</font_weight>
+                    <style>
+                        QLabel { border: none; padding: 0px; }
+                    </style>
+                </widget>
+                <widget type="QLabel" role="downloaded_builds_count">
+                    <text>(0)</text>
+                    <font_size>16</font_size>
+                    <font_weight>bold</font_weight>
+                </widget>
+                <stretch />
+            </row>
+            <widget type="QScrollArea" role="local_builds_container">
+                <style>
+                    QScrollArea { border: none; background: transparent; min-height: 135px; }
+                    QWidget { background: transparent; }
+                </style>
+            </widget>
+        </card>
+        <controller type="BuildsDashboardController" />
+    </tab>
+
+    <tab title="Build from Product Selection" id="firmware_from_product">
+        <row>
+            <stretch />
+            <widget type="QLabel" role="title">
+                <text>Build from Product Selection</text>
+                <font_size>30</font_size>
+                <font_weight>bold</font_weight>
+                <alignment>center</alignment>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <column>
+                <card>
+                    <style>
+                        .QFrame {
+                            border: 1px solid #ccc;
+                            border-radius: 8px;
+                            background-color: transparent;
+                            padding-top: 10px;
+                            padding-bottom: 10px;
+                            padding-left: 5px;
+                            padding-right: 5px;
+                            min-width: 300px;
+                        }
+                    </style>
+                    <row>
+                        <column>
+                            <widget type="QLabel">
+                                <text>Product:</text>
+                            </widget>
+                            <widget type="QComboBox" role="product_name">
+                                <items>
+                                    <item>Select Product</item>
+                                    <item>Callie</item>
+                                    <item>Calypso</item>
+                                </items>
+                            </widget>
+                        </column>
+                        <column>
+                            <widget type="QLabel">
+                                <text>Branch:</text>
+                            </widget>
+                            <widget type="QComboBox" role="product_branch">
+                                <items>
+                                    <item>Select Branch</item>
+                                    <item>Mainline</item>
+                                    <item>Ship</item>
+                                    <item>Product</item>
+                                </items>
+                            </widget>
+                        </column>
+                        <column>
+                            <widget type="QLabel">
+                                <text>Variant:</text>
+                            </widget>
+                            <widget type="QComboBox" role="product_variant">
+                                <items>
+                                    <item>Select Variant</item>
+                                    <item>User</item>
+                                    <item>Userdevsigned</item>
+                                    <item>Userdebug</item>
+                                    <item>User-External</item>
+                                </items>
+                            </widget>
+                        </column>
+                        <column>
+                            <widget type="QLabel">
+                                <text>Build Number:</text>
+                            </widget>
+                            <widget type="QLineEdit" role="product_build_number">
+                                <placeholder>Enter Build Number</placeholder>
+                            </widget>
+                        </column>
+                    </row>
+                </card>
+                <card>
+                    <style>
+                        .QFrame {
+                            border: 1px solid #ccc;
+                            border-radius: 8px;
+                            background-color: transparent;
+                            padding-left: 5px;
+                            padding-right: 5px;
+                            min-width: 300px;
+                        }
+                    </style>
+                    <row>
+                        <stretch />
+                        <widget type="QLabel" role="lbl_retry">
+                            <text>Download retry count:</text>
+                            <style>QLabel { margin-right: 5px; }</style>
+                        </widget>
+                        <widget type="QSpinBox" role="retry_count">
+                            <min>1</min>
+                            <max>4</max>
+                            <value>1</value>
+                            <readonly>true</readonly>
+                        </widget>
+                        <card>
+                            <style>
+                                .QFrame {
+                                    border: 1px solid #ccc;
+                                    border-radius: 8px;
+                                    padding: 5px;
+                                    margin-top: 10px;
+                                    margin-bottom: 10px;
+                                    margin-right: 5px;
+                                    min-width: 80px;
+                                    max-width: 80px;
+                                    min-height: 80px;
+                                    max-height: 80px;
+                                    background-color: #f0f0f0;
+                                }
+                            </style>
+                            <row>
+                                <widget type="QCheckBox" role="download">
+                                    <checked>true</checked>
+                                    <icon>download</icon>
+                                    <text>Download Build</text>
+                                </widget>
+                            </row>
+                        </card>
+                        <card>
+                            <style>
+                                .QFrame {
+                                    border: 1px solid #ccc;
+                                    border-radius: 8px;
+                                    padding: 5px;
+                                    margin-top: 10px;
+                                    margin-bottom: 10px;
+                                    min-width: 80px;
+                                    max-width: 80px;
+                                    min-height: 80px;
+                                    max-height: 80px;
+                                    background-color: #f0f0f0;
+                                }
+                            </style>
+                            <row>
+                                <widget type="QCheckBox" role="extract">
+                                    <checked>true</checked>
+                                    <icon>extract</icon>
+                                    <text>Extract Build</text>
+                                </widget>
+                            </row>
+                        </card>
+                        <stretch />
+                    </row>
+                </card>
+                <card>
+                    <style>
+                        .QFrame {
+                            border: 1px solid #ccc;
+                            border-radius: 8px;
+                            background-color: transparent;
+                            padding-left: 5px;
+                            padding-right: 5px;
+                            min-width: 300px;
+                        }
+                    </style>
+                    <row>
+                        <widget type="QComboBox" role="device_dropdown">
+                            <style>QComboBox { padding: 5px; min-width: 150px; }</style>
+                        </widget>
+                        <button role="btn_refresh">
+                            <icon>refresh</icon>
+                            <tooltip>Refresh</tooltip>
+                        </button>
+                        <card>
+                            <style>
+                                .QFrame {
+                                    border: 1px solid #ccc;
+                                    border-radius: 8px;
+                                    padding: 5px;
+                                    margin-top: 10px;
+                                    margin-bottom: 10px;
+                                    margin-right: 5px;
+                                    min-width: 80px;
+                                    max-width: 80px;
+                                    min-height: 80px;
+                                    max-height: 80px;
+                                    background-color: #f0f0f0;
+                                }
+                            </style>
+                            <row>
+                                <widget type="QCheckBox" role="autoflash">
+                                    <checked>false</checked>
+                                    <icon>flash</icon>
+                                    <text>Auto Flash</text>
+                                </widget>
+                            </row>
+                        </card>
+                        <button type="button" role="start">
+                            <icon>start</icon>
+                            <tooltip>Start</tooltip>
+                            <action>firmware_manager</action>
+                        </button>
+                    </row>
+                </card>
+            </column>
+            <stretch />
+        </row>
+        <controller type="FirmwareController" />
+    </tab>
+
+    <tab title="Build for {DSN}" id="firmware_from_{DSN}">
+        <row>
+            <stretch />
+            <widget type="QLabel" role="title">
+                <text>Build for {DSN}</text>
+                <font_size>30</font_size>
+                <font_weight>bold</font_weight>
+                <alignment>center</alignment>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QComboBox" role="product_name">
+                <items>
+                    <item>Select Product</item>
+                    <item>Callie</item>
+                    <item>Calypso</item>
+                </items>
+            </widget>
+            <widget type="QComboBox" role="product_branch">
+                <items>
+                    <item>Select Branch</item>
+                    <item>Mainline</item>
+                    <item>Ship</item>
+                    <item>Product</item>
+                </items>
+            </widget>
+            <widget type="QComboBox" role="product_variant">
+                <items>
+                    <item>Select Variant</item>
+                    <item>User</item>
+                    <item>Userdevsigned</item>
+                    <item>Userdebug</item>
+                    <item>User-External</item>
+                </items>
+            </widget>
+            <widget type="QLineEdit" role="product_build_number">
+                <placeholder>Enter Build Number</placeholder>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QCheckBox" role="autoflash">
+                <checked>false</checked>
+                <icon>flash</icon>
+                <text>Auto Flash</text>
+            </widget>
+            <button type="button" role="start">
+                <icon>start</icon>
+                <tooltip>Start</tooltip>
+                <action>firmware_manager</action>
+            </button>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QLabel" role="active_filename">
+                <text />
+                <font_size>18</font_size>
+                <font_weight>bold</font_weight>
+                <alignment>center</alignment>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QLabel" role="status_title">
+                <text>Status :</text>
+                <font_size>15</font_size>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QLabel" role="status">
+                <text />
+                <font_size>15</font_size>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QProgressBar" role="progress" min="0" max="100" />
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QPushButton" role="btn_toggle_logs">
+                <text>Show Logs</text>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <widget type="QLabel" role="log_label">
+                <text>Process Logs</text>
+                <font_weight>bold</font_weight>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <widget type="QTextEdit" role="log_area">
+                <readonly>true</readonly>
+                <style>QTextEdit { font-family: monospace; min-height: 200px; }</style>
+            </widget>
+        </row>
+        <controller type="FirmwareController" />
+    </tab>
+
+    <tab title="Flash Local Build" id="flash_local_build">
+        <row>
+            <stretch />
+            <widget type="QLabel" role="title">
+                <text>Flash {BUILD_NAME}</text>
+                <font_size>30</font_size>
+                <font_weight>bold</font_weight>
+                <alignment>center</alignment>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QComboBox" role="device_dropdown">
+                <style>QComboBox { padding: 5px; min-width: 150px; }</style>
+            </widget>
+            <button role="btn_refresh">
+                <icon>refresh</icon>
+                <tooltip>Refresh</tooltip>
+            </button>
+            <button type="button" role="start">
+                <icon>flash</icon>
+                <tooltip>Flash</tooltip>
+                <action>flash_local_build_action</action>
+            </button>
+            <widget type="QPushButton" role="btn_toggle_logs">
+                <text>Show Logs</text>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QLabel" role="status">
+                <text />
+                <font_size>20</font_size>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <stretch />
+            <widget type="QProgressBar" role="progress" min="0" max="100" />
+            <stretch />
+        </row>
+        <row>
+            <widget type="QLabel" role="log_label">
+                <text>Process Logs</text>
+                <font_weight>bold</font_weight>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <widget type="QTextEdit" role="log_area">
+                <readonly>true</readonly>
+                <style>QTextEdit { font-family: monospace; min-height: 200px; }</style>
+            </widget>
+        </row>
+        <controller type="FirmwareController" />
+    </tab>
+</Config>

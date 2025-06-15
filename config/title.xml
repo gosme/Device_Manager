@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <background>#2c3e50</background>
+    <height>40</height>
+
+    <title_label>
+        <text>Device Manager</text>
+        <color>white</color>
+    </title_label>
+
+    <separator>
+        <text> | </text>
+        <color>white</color>
+    </separator>
+
+    <tab_label>
+        <color>white</color>
+    </tab_label>
+
+    <tab_close_button>
+        <text>X</text>
+        <size>30</size>
+        <style>
+            QPushButton {
+                background-color: #e74c3c;
+                border: none;
+                color: white;
+                border-radius: 4px;
+            }
+            QPushButton:hover {
+                background-color: #c0392b;
+            }
+        </style>
+    </tab_close_button>
+
+    <window_buttons>
+        <minimize>
+            <text>-</text>
+            <size>30</size>
+            <style>
+                QPushButton {
+                    background-color: #34495e;
+                    border: none;
+                    color: white;
+                    border-radius: 4px;
+                }
+                QPushButton:hover {
+                    background-color: #3b4d5c;
+                }
+            </style>
+        </minimize>
+        <maximize>
+            <text>□</text>
+            <size>30</size>
+            <style>
+                QPushButton {
+                    background-color: #34495e;
+                    border: none;
+                    color: white;
+                    border-radius: 4px;
+                }
+                QPushButton:hover {
+                    background-color: #3b4d5c;
+                }
+            </style>
+        </maximize>
+        <close>
+            <text>X</text>
+            <size>30</size>
+            <style>
+                QPushButton {
+                    background-color: #e74c3c;
+                    border: none;
+                    color: white;
+                    border-radius: 4px;
+                }
+                QPushButton:hover {
+                    background-color: #c0392b;
+                }
+            </style>
+        </close>
+    </window_buttons>
+</Config>

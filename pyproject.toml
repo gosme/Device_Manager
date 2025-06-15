@@ -1,0 +1,37 @@
+[build-system]
+requires = ["setuptools>=61.0", "setuptools_scm[toml]>=7.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "device-manager"
+dynamic = ["version"]
+description = "Device Manager Application"
+authors = [
+    { name = "Gokulesh Sreekumar", email = "goksreek@amazon.com" }
+]
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "PySide6",
+    "pyqtgraph",
+    "pywinauto",
+    "browser-cookie3",
+    "distro",
+    "jira",
+    "requests",
+    "pyshortcuts",
+    "keyring",
+    "more-itertools",
+]
+
+[project.scripts]
+device-manager = "device_manager.main:main"
+
+[tool.setuptools]
+[tool.setuptools.packages.find]
+include = ["device_manager*", "modules*", "commands*", "config*"]
+
+[tool.setuptools.package-data]
+"*" = ["*.xml", "**/*.xml", "*.png", "**/*.png", "*.ps1", "*.so", "*.pyd", "*.dylib"]
+
+[tool.setuptools_scm]

@@ -1,6 +1,6 @@
 # Device Manager
 
-This repository contains a PyQt-based GUI application that provides a custom interface for managing and executing system commands in a multi-tab environment. The application integrates a functional toolbar and supports creating, managing, and switching between command prompt tabs.
+This repository contains a PySide6-based GUI application that provides a custom interface for managing and executing system commands in a multi-tab environment. The application integrates a functional toolbar and supports creating, managing, and switching between command prompt tabs.
 
 ## Features
 
@@ -23,6 +23,8 @@ This repository contains a PyQt-based GUI application that provides a custom int
 - **Automated Reporting:** Automated mail and report compilers for streamlined communication.
 - **Enhanced Terminal UI:** Cross-platform terminal logic, dynamic OS shell button hiding, and integrated GitBash support.
 - **Architectural Enhancements:** Decoupled UI controllers, core helpers, and logging backends for improved maintainability.
+- **PySide6 Migration:** Fully transitioned to PySide6 for enhanced UI rendering and modern Qt6 support.
+- **Settings Management:** Dedicated Settings tab for configuring UI appearance and application preferences.
 
 ## Requirements
 
@@ -87,7 +89,7 @@ pipx install git+https://github.com/gosme/Device_Manager.git@v[TAG]
 > ```
 
 #### Linux (Ubuntu) Dependencies
-If you encounter an error starting the application on Ubuntu regarding the Qt platform plugin (e.g., `qt.qpa.plugin: Could not load the Qt platform plugin "xcb"` or warnings about `XDG_SESSION_TYPE=wayland`), you are missing required system libraries for PyQt. 
+If you encounter an error starting the application on Ubuntu regarding the Qt platform plugin (e.g., `qt.qpa.plugin: Could not load the Qt platform plugin "xcb"` or warnings about `XDG_SESSION_TYPE=wayland`), you are missing required system libraries for PySide6. 
 
 You can install them via `apt`:
 ```bash
@@ -125,10 +127,22 @@ device-manager
 8. **Jira & Reporting:**
    - Access the interactive Jira dashboard to manage issues and transitions.
    - Utilize automated mail and report compilers to streamline task updates.
+9. **Settings & Customization:**
+   - Access the Settings tab to customize appearance and application-specific configurations.
 
-## License
+## Licensing and Third-Party Notices
 This project is licensed under the MIT License. See the LICENSE file for details.
+
+This application is proprietary and its custom source code is private. 
+
+However, this application utilizes **PySide6** (the official Python bindings for the Qt Management Framework), which is licensed under the **GNU Lesser General Public License version 3 (LGPLv3)**. 
+
+In compliance with the LGPLv3:
+1. The PySide6 library is used dynamically and unaltered within this application's environment.
+2. Users can independently upgrade or replace the PySide6 package within their Python/pipx environment.
+3. The full text of the LGPLv3 can be found at: https://www.gnu.org/licenses/lgpl-3.0.html
 
 ---
 
 Contributions and feedback are welcome! Open an issue or submit a pull request if you have suggestions or improvements.
+

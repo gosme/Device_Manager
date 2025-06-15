@@ -1,0 +1,158 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab title="Jira Dashboard" id="jira_dashboard">
+        <controller type="JiraController" />
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>Jira Dashboard</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+        
+        <row>
+            <widget type="QLabel" role="subtitle">
+                <text>Jiras in Verify status</text>
+                <font_size>14</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <stretch />
+            <widget type="QPushButton" role="btn_refresh_verify">
+                <icon>refresh</icon>
+                <tooltip>Refresh Jiras in Verify</tooltip>
+            </widget>
+        </row>
+        <widget type="QTableWidget" role="verify_status_jira_table">
+            <style>
+                QTableWidget {
+                    border: 1px solid #a0a0a0;
+                    min-height: 135px;
+                    gridline-color: #e0e0e0;
+                }
+                QTableWidget::item {
+                    padding: 5px;
+                    border-bottom: 1px solid #e0e0e0;
+                }
+                QHeaderView::section {
+                    border: none;
+                    border-bottom: 1px solid #a0a0a0;
+                    background-color: transparent;
+                    padding: 4px;
+                    font-weight: bold;
+                }
+            </style>
+        </widget>
+        
+        <row>
+            <widget type="QLabel" role="subtitle">
+                <text>Monthly Jiras created</text>
+                <font_size>14</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <stretch />
+            <widget type="QPushButton" role="btn_refresh_calendar">
+                <icon>refresh</icon>
+                <tooltip>Refresh Jira Data</tooltip>
+            </widget>
+        </row>
+        <widget type="JiraCalendar" role="jira_monthly_calendar">
+            <style>
+                JiraCalendar {
+                    min-height: 135px;
+                }
+            </style>
+        </widget>
+    </tab>
+    <tab title="Jira Ticket Details" id="jira_ticket_details">
+        <controller type="JiraController" />
+        <background>white</background>
+        <font_color>black</font_color>
+        
+        <row>
+            <widget type="QLabel" role="title">
+                <text>Jira Ticket Details</text>
+                <font_size>30</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <stretch />
+            <widget type="QPushButton" role="btn_open_jira">
+                <text>Open in Browser</text>
+                <tooltip>Open Jira in Browser</tooltip>
+                <style>QPushButton { padding: 5px 15px; border: 1px solid #ccc; border-radius: 4px; background-color: #f8f8f8; } QPushButton:hover { background-color: #e0e0e0; }</style>
+            </widget>
+            <widget type="QPushButton" role="btn_edit_jira">
+                <icon>edit</icon>
+                <text>Edit</text>
+                <style>QPushButton { padding: 5px 15px; border: 1px solid #ccc; border-radius: 4px; background-color: #f8f8f8; } QPushButton:hover { background-color: #e0e0e0; }</style>
+            </widget>
+        </row>
+
+        <row>
+            <widget type="QLabel"><text>Summary: </text><font_weight>bold</font_weight></widget>
+            <widget type="QLineEdit" role="txt_summary">
+                <style>
+                    QLineEdit { border: none; background: transparent; color: black; font-size: 16px; font-weight: bold; }
+                </style>
+            </widget>
+        </row>
+        
+        <row>
+            <widget type="QLabel"><text>Status: </text><font_weight>bold</font_weight></widget>
+            <widget type="QLabel" role="lbl_status"><text>N/A</text></widget>
+            <widget type="QComboBox" role="dropdown_status" />
+            
+            <widget type="QLabel"><text>  Assignee: </text><font_weight>bold</font_weight></widget>
+            <widget type="QLineEdit" role="txt_assignee">
+                <style>
+                    QLineEdit { border: none; background: transparent; color: black; }
+                </style>
+            </widget>
+            
+            <widget type="QLabel"><text>  Reporter: </text><font_weight>bold</font_weight></widget>
+            <widget type="QLabel" role="lbl_reporter"><text>N/A</text></widget>
+            
+            <widget type="QLabel"><text>  Created Date: </text><font_weight>bold</font_weight></widget>
+            <widget type="QLabel" role="lbl_created_date"><text>N/A</text></widget>
+            <stretch />
+        </row>
+
+        <row>
+            <widget type="QLabel"><text>Description:</text><font_weight>bold</font_weight></widget>
+            <stretch />
+            <widget type="QPushButton" role="btn_toggle_focus">
+                <text>^</text>
+                <style>QPushButton { max-width: 30px; padding: 2px; border: 1px solid #ccc; border-radius: 3px; background-color: #f8f8f8; } QPushButton:hover { background-color: #e0e0e0; }</style>
+            </widget>
+        </row>
+        <widget type="QTextEdit" role="txt_description">
+            <tooltip>Click to minimize</tooltip>
+            <style>
+                QTextEdit { border: none; background: transparent; color: black; }
+            </style>
+        </widget>
+
+        <row>
+            <widget type="QLabel"><text>Last Comment:</text><font_weight>bold</font_weight></widget>
+        </row>
+        <widget type="QLabel" role="lbl_last_comment">
+            <style>QLabel { background-color: #f0f0f0; padding: 10px; border-radius: 5px; }</style>
+            <text>No comments</text>
+            <word_wrap>true</word_wrap>
+        </widget>
+
+        <row>
+            <widget type="QLabel"><text>Add Comment:</text><font_weight>bold</font_weight></widget>
+        </row>
+        <widget type="QTextEdit" role="txt_new_comment">
+            <style>QTextEdit { border: 1px solid #ccc; }</style>
+        </widget>
+        
+        <row>
+            <stretch />
+            <widget type="QPushButton" role="btn_send_comment">
+                <text>Comment</text>
+            </widget>
+        </row>
+    </tab>
+</Config>

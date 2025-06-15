@@ -1,0 +1,100 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    
+    <tab title="Terminal selector">
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>Terminal Dashboard</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+        <card>
+            <style>
+                .QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px;
+                }
+                QPushButton {
+                    border: 1px solid #d0d0d0;
+                    border-radius: 4px;
+                    background-color: #f9f9f9;
+                    min-height: 35px;
+                    padding: 5px 15px;
+                }
+                QPushButton:hover {
+                    background-color: #e0e0e0;
+                }
+            </style>
+            <row>
+                <button type="dashboard">
+                    <icon>:/icons/terminal_plus</icon>
+                    <text>New Terminal</text>
+                    <action>open_new_cmd_tab()</action>
+                </button>
+                <button type="dashboard">
+                    <icon>:/icons/cmd</icon>
+                    <text>Command Prompt</text>
+                    <action>open_new_shell("cmd")</action>
+                </button>
+                <button type="dashboard">
+                    <icon>:/icons/powershell</icon>
+                    <text>PowerShell</text>
+                    <action>open_new_shell("powershell")</action>
+                </button>
+                <button type="dashboard">
+                    <icon>:/icons/gitbash</icon>
+                    <text>Git Bash</text>
+                    <action>open_new_shell("gitbash")</action>
+                </button>
+                <button type="dashboard">
+                    <icon>:/icons/ubuntu</icon>
+                    <text>Ubuntu</text>
+                    <action>open_new_shell("ubuntu")</action>
+                </button>
+                <button type="dashboard">
+                    <icon>:/icons/journal</icon>
+                    <text>Journal logs</text>
+                    <action>pull_journal_logs()</action>
+                </button>
+                <button type="dashboard">
+                    <icon>:/icons/parsed</icon>
+                    <text>Parsed logs</text>
+                    <action>pull_parsed_logs()</action>
+                </button>
+            </row>
+        </card>
+    </tab>
+    
+    <tab title="Terminal instance">
+        <widget type="QTextEdit" role="terminal_output">
+            <readonly>true</readonly>
+            <style>
+                QTextEdit {
+                    font-size: 14px;
+                    border: none;
+                }
+                QScrollBar:vertical { width: 20px; }
+                QScrollBar:horizontal { height: 20px; }
+            </style>
+        </widget>
+        <widget type="QLineEdit" role="terminal_input">
+            <placeholder>Type your command here...</placeholder>
+            <style>
+                QLineEdit {
+                    font-size: 14px;
+                    border: none;
+                    padding: 4px;
+                }
+            </style>
+        </widget>
+        <controller type="TerminalWindow" output="terminal_output" input="terminal_input" />
+    </tab>
+    <toolbar>
+        <position>left</position>
+        <background>#1a252f</background>
+    </toolbar>
+</Config>

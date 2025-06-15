@@ -1,0 +1,141 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab>
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>Help</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+        
+        <card>
+            <style>
+                .QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 15px;
+                }
+            </style>
+            
+            <widget type="QLabel">
+                <text>Issue Description</text>
+                <font_size>14</font_size>
+                <font_weight>bold</font_weight>
+                <style>QLabel { margin-bottom: 5px; }</style>
+            </widget>
+            
+            <widget type="QTextEdit" role="issue_notes">
+                <placeholder>Describe the issue and any relevant information.</placeholder>
+                <style>
+                    QTextEdit {
+                        border: 1px solid #aaa;
+                        border-radius: 4px;
+                        padding: 8px;
+                        min-height: 100px;
+                    }
+                </style>
+            </widget>
+            
+            <widget type="QLabel">
+                <text>Provide Detailed Logs &amp; Media</text>
+                <font_size>14</font_size>
+                <font_weight>bold</font_weight>
+                <style>QLabel { margin-top: 20px; margin-bottom: 10px; }</style>
+            </widget>
+            
+            <widget type="QLabel">
+                <text>Internal Logs</text>
+                <font_size>12</font_size>
+                <font_weight>bold</font_weight>
+                <style>QLabel { margin-bottom: 5px; }</style>
+            </widget>
+            
+            <row>
+                <widget type="QLabel" text="Local Logs File" />
+                <widget type="QComboBox" role="issue_logs">
+                    <style>
+                        QComboBox {
+                            border: 1px solid #aaa;
+                            border-radius: 4px;
+                            padding: 6px;
+                            min-width: 200px;
+                        }
+                    </style>
+                </widget>
+                <widget type="QPushButton" role="browse_logs_btn" text="Select File">
+                    <style>
+                        QPushButton {
+                            background-color: #e0e0e0;
+                            border-radius: 4px;
+                            padding: 6px 12px;
+                        }
+                        QPushButton:hover {
+                            background-color: #d0d0d0;
+                        }
+                    </style>
+                </widget>
+            </row>
+            
+            <widget type="QLabel">
+                <text>Attachments via URL</text>
+                <font_size>12</font_size>
+                <font_weight>bold</font_weight>
+                <style>QLabel { margin-top: 15px; margin-bottom: 5px; }</style>
+            </widget>
+            
+            <row>
+                <widget type="QLabel" text="Drive/Cloud URL for logs" />
+                <widget type="QLineEdit" role="cloud_logs_link">
+                    <placeholder>Paste shared Google Drive or Dropbox link here.</placeholder>
+                    <style>
+                        QLineEdit {
+                            border: 1px solid #aaa;
+                            border-radius: 4px;
+                            padding: 6px;
+                            min-width: 300px;
+                        }
+                    </style>
+                </widget>
+            </row>
+            
+            <row>
+                <widget type="QLabel" text="Screenshot URL" />
+                <widget type="QLineEdit" role="issue_screenshot">
+                    <placeholder>Paste shared image drive link here.</placeholder>
+                    <style>
+                        QLineEdit {
+                            border: 1px solid #aaa;
+                            border-radius: 4px;
+                            padding: 6px;
+                            min-width: 300px;
+                        }
+                    </style>
+                </widget>
+            </row>
+            
+            <row>
+                <stretch />
+                <widget type="QPushButton" role="submit_issue_btn" text="Submit">
+                    <style>
+                        QPushButton {
+                            background-color: #34495e;
+                            color: white;
+                            border-radius: 4px;
+                            padding: 8px 24px;
+                            font-weight: bold;
+                        }
+                        QPushButton:hover {
+                            background-color: #3b4d5c;
+                        }
+                    </style>
+                </widget>
+            </row>
+        </card>
+        
+        <controller type="HelpController" notes="issue_notes" logs="issue_logs" screenshot="issue_screenshot" submit_btn="submit_issue_btn" />
+        <stretch />
+    </tab>
+</Config>

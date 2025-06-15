@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab title="Device List">
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>Devices Dashboard</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+        <row>
+            <widget type="QLabel" role="subtitle">
+                <text>Connected Devices</text>
+                <font_size>14</font_size>
+                <font_weight>bold</font_weight>
+                <style>
+                    QLabel {
+                        margin-bottom: 10px;
+                    }
+                </style>
+            </widget>
+            <widget type="QLabel" role="message">
+                <text />
+                <style>
+                    QLabel {
+                        font-size: 12px;
+                        color: #555;
+                        margin-left: 10px;
+                        margin-bottom: 10px;
+                    }
+                </style>
+            </widget>
+            <stretch />
+            <card>
+                <style>
+                    .QFrame {
+                        border: 1px solid #ccc;
+                        border-radius: 8px;
+                        background-color: transparent;
+                        padding: 8px;
+                    }
+                    QPushButton {
+                        min-height: 30px;
+                        padding: 4px 12px;
+                        border-radius: 4px;
+                        border: 1px solid #aaa;
+                        background-color: #f8f9fa;
+                        color: #333;
+                    }
+                    QPushButton:hover {
+                        background-color: #e2e6ea;
+                    }
+                </style>
+                <row>
+                    <button>
+                        <icon>device_search</icon>
+                        <text>Refresh</text>
+                        <action>refresh_devices()</action>
+                    </button>
+                    <button>
+                        <text>Connect by IP</text>
+                        <action>connect_ip()</action>
+                    </button>
+                </row>
+            </card>
+        </row>
+        <widget type="QTableWidget" role="devices">
+            <style>
+                QTableWidget {
+                    border: 0px;
+                    padding: 5px;
+                }
+                QTableWidget::item {
+                    padding: 5px;
+                }
+            </style>
+        </widget>
+    </tab>
+    <tab title="Device Details">
+        <widget type="QLabel" role="device_header">
+            <style>
+                QLabel {
+                    font-size: 30px;
+                    color: gray;
+                    font-style: bold;
+                    margin-top: 20px;
+                }
+            </style>
+        </widget>
+        <widget type="QTableWidget" role="device_name" rows="0" cols="2">
+            <style>
+                QTableWidget {
+                    border: 0px;
+                    padding: 5px;
+                }
+                QTableWidget::item {
+                    padding: 5px;
+                }
+            </style>
+        </widget>
+        <row>
+            <button>
+                <icon>acr</icon>
+                <text>ACR</text>
+                <action>pull_acr()</action>
+            </button>
+            <button>
+                <icon>parsed</icon>
+                <text>Full logs</text>
+                <action>pull_parsed_logs()</action>
+            </button>
+            <button>
+                <icon>journal</icon>
+                <text>Journal logs</text>
+                <action>pull_journal_logs()</action>
+            </button>
+            <button>
+                <icon>download</icon>
+                <text>Download Build</text>
+                <action>download_firmware()</action>
+            </button>
+            <button>
+                <icon>flash</icon>
+                <text>Flash Device</text>
+                <action>flash_firmware()</action>
+            </button>
+            <stretch />
+        </row>
+    </tab>
+    <toolbar>
+        <position>left</position>
+        <background>#f0f0f0</background>
+        <width>150</width>
+    </toolbar>
+</Config>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <background>#2c3e50</background>
+    <min_height>30</min_height>
+
+    <env_label>
+        <text>Running on :</text>
+        <color>white</color>
+    </env_label>
+
+    <cisco_button>
+        <enabled>false</enabled>
+        <size>20</size>
+        <icon_connected>cisco_connected</icon_connected>
+        <icon_disconnected>cisco_disconnected</icon_disconnected>
+        <poll_interval_ms>60000</poll_interval_ms>
+    </cisco_button>
+
+    <font_slider>
+        <enabled>false</enabled>
+        <width>100</width>
+        <height>24</height>
+        <min>10</min>
+        <max>32</max>
+        <default>14</default>
+        <tick_interval>2</tick_interval>
+        <icon>magnifier</icon>
+    </font_slider>
+
+    <status_label>
+        <default_text>Ready</default_text>
+        <color>white</color>
+    </status_label>
+
+    <status_icon>
+        <size>20</size>
+        <default_icon>tick</default_icon>
+    </status_icon>
+</Config>

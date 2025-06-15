@@ -1,0 +1,3 @@
+<commands>
+    <command type="journal" command="journalctl"/>
+</commands>

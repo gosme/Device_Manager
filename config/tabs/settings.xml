@@ -1,0 +1,106 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab>
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>Settings</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+        <row>
+            <stretch />
+            <widget type="QWidget" role="settings_content_area">
+                <style>.QWidget { min-width: 400px; }</style>
+            </widget>
+            <stretch />
+        </row>
+        <controller type="SettingsUIController" />
+    </tab>
+    <toolbar>
+        <background>#f0f0f0</background>
+    </toolbar>
+    <cards>
+        <card role="appearance_card">
+            <style>
+                .QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 10px;
+                    min-width: 400px;
+                }
+            </style>
+            <row>
+                <widget type="QLabel">
+                    <text>Theme:</text>
+                    <font_size>14</font_size>
+                    <font_weight>bold</font_weight>
+                </widget>
+                <stretch />
+            </row>
+            <row>
+                <widget type="ThemeSlider" role="theme_selector">
+                    <items>
+                        <item>light</item>
+                        <item>dark</item>
+                        <item>focus</item>
+                        <item>custom</item>
+                    </items>
+                </widget>
+            </row>
+            <row>
+                <widget type="QLabel">
+                    <text>Font Family:</text>
+                    <font_size>14</font_size>
+                    <font_weight>bold</font_weight>
+                </widget>
+                <stretch />
+                <widget type="QComboBox" role="font_family_input">
+                    <style>QComboBox { min-width: 150px; }</style>
+                </widget>
+            </row>
+            <row>
+                <stretch />
+                <button role="btn_save_settings" type="standard">
+                    <text>Save Settings</text>
+                    <action>save_settings()</action>
+                </button>
+                <stretch />
+            </row>
+        </card>
+
+        <card role="custom_theme_card">
+            <style>
+                .QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 10px;
+                    min-width: 550px;
+                }
+            </style>
+            <widget type="QLabel">
+                <text>Custom Theme Colors</text>
+                <font_size>16</font_size>
+                <font_weight>bold</font_weight>
+                <alignment>center</alignment>
+                <style>QLabel { margin-bottom: 10px; }</style>
+            </widget>
+            <widget type="QWidget" role="custom_theme_grid_container">
+            </widget>
+            <row>
+                <stretch />
+                <button role="btn_back_to_appearance" type="standard">
+                    <text>Back to Appearance</text>
+                </button>
+                <button role="btn_save_custom_theme" type="standard">
+                    <text>Save Settings</text>
+                    <action>save_settings()</action>
+                </button>
+                <stretch />
+            </row>
+        </card>
+    </cards>
+</Config>

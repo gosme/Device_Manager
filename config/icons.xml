@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <Icons>
+        <Icon key="logo" path="icons/Amazon_Fire_TV_logo.png"/>
+        <Icon key="home" path="icons/home.png"/>
+        <Icon key="network" path="icons/network.png"/>
+        <Icon key="jira" path="icons/jira.png"/>
+        <Icon key="report" path="icons/report.png"/>
+        <Icon key="terminal_plus" path="icons/terminal+.png"/>
+        <Icon key="acr" path="icons/acr.png"/>
+        <Icon key="settings" path="icons/settings.png"/>
+        <Icon key="help" path="icons/help.png"/>
+        <Icon key="terminal" path="icons/terminal.png"/>
+        <Icon key="cisco_connected" path="icons/cisco_connected.png"/>
+        <Icon key="cisco_disconnected" path="icons/cisco_disconnected.png"/>
+        <Icon key="tick" path="icons/tick.png"/>
+        <Icon key="warning" path="icons/warning.png"/>
+        <Icon key="error" path="icons/error.png"/>
+        <Icon key="magnifier" path="icons/lens.png"/>
+        <Icon key="refresh" path="icons/refresh.png"/>
+        <Icon key="show" path="icons/window-expand.png"/>
+        <Icon key="hide" path="icons/window-collapse.png"/>
+        <Icon key="device" path="icons/device.png"/>
+        <Icon key="device_search" path="icons/device_search.png"/>
+        <Icon key="parsed" path="icons/parsed.png"/>
+        <Icon key="journal" path="icons/logs.png"/>
+        <Icon key="download" path="icons/download.png"/>
+        <Icon key="flash" path="icons/flash.png"/>
+        <Icon key="extract" path="icons/extract.png"/>
+        <Icon key="ubuntu" path="icons/ubuntu.png"/>
+        <Icon key="powershell" path="icons/powershell.png"/>
+        <Icon key="gitbash" path="icons/gitbash.png"/>
+    </Icons>
+</Config>

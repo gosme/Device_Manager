@@ -1,0 +1,136 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab title="Report Dashboard" id="report_dashboard">
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>Report Dashboard</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+        
+        
+        <row>
+            <widget type="QLabel">
+                <text>Today's reports</text>
+                <font_size>20</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <widget type="QLabel" role="today_count">
+                <text>(0)</text>
+                <font_size>20</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <stretch />
+            <widget type="QPushButton" role="btn_refresh_reports">
+                <text>Refresh</text>
+            </widget>
+            <widget type="QPushButton" role="btn_new_report">
+                <text>New report</text>
+            </widget>
+        </row>
+        <widget type="QScrollArea" role="todays_reports_container">
+            <style>
+                QScrollArea { border: 1px solid #d0d0d0; border-radius: 4px; min-height: 135px; }
+            </style>
+        </widget>
+
+        <widget type="QLabel" text=" " />
+
+        
+        <row>
+            <widget type="QLabel">
+                <text>Old reports</text>
+                <font_size>20</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <widget type="QLabel" role="old_count">
+                <text>(0)</text>
+                <font_size>20</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <stretch />
+        </row>
+        <widget type="QScrollArea" role="old_reports_container">
+        </widget>
+        <controller type="ReportController" />
+    </tab>
+
+    <tab title="New Report" id="new_report">
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>New Report</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+
+        <row>
+            <widget type="QLabel" text="Testrail ID:" />
+            <widget type="QLineEdit" role="input_testrail_id" placeholder_text="Enter Testrail ID" />
+        </row>
+        <row>
+            <widget type="QLabel" text="Testrail Type:" />
+            <widget type="QComboBox" role="input_testrail_type">
+                <item>Milestone</item>
+                <item>Run</item>
+            </widget>
+        </row>
+        <row>
+            <widget type="QLabel" text="Build Number:" />
+            <widget type="QLineEdit" role="input_build_number" placeholder_text="Enter Build Number" />
+        </row>
+        <row>
+            <widget type="QLabel" text="Additional Labels (comma separated):" />
+            <widget type="QLineEdit" role="input_additional_labels" placeholder_text="Label1, Label2" />
+        </row>
+        <row>
+            <widget type="QLabel" text="Test Result Excel File:" />
+            <widget type="QLineEdit" role="input_excel_file_path" placeholder_text="Select a file..." />
+            <widget type="QPushButton" role="btn_browse_excel">
+                <text>Browse</text>
+            </widget>
+        </row>
+
+        <row>
+            <stretch />
+            <widget type="QPushButton" role="btn_proceed">
+                <text>Proceed</text>
+            </widget>
+            <stretch />
+        </row>
+        <controller type="ReportController" />
+    </tab>
+
+    <tab title="Show Report" id="show_report">
+        <background>white</background>
+        <font_color>black</font_color>
+        
+        <widget type="QLabel" role="title">
+            <text>Report</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+            <alignment>center</alignment>
+        </widget>
+
+        <row>
+            <widget type="QLabel" role="subtitle" text="Report Preview" />
+            <stretch />
+            <widget type="QPushButton" role="btn_show_in_browser">
+                <text>Show in Browser</text>
+            </widget>
+            <widget type="QPushButton" role="btn_send_mail">
+                <text>Send mail</text>
+            </widget>
+            <widget type="QPushButton" role="btn_reject">
+                <text>Reject</text>
+            </widget>
+        </row>
+
+        <widget type="QTextBrowser" role="html_preview_area">
+        </widget>
+        <controller type="ReportController" />
+    </tab>
+</Config>

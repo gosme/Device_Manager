@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <tab title="Parsed logs {DSN}" id="parsed_logs_{DSN}">
+        <row>
+            <widget type="QLabel" role="device_name" >
+                <style>
+                    QLabel { padding: 5px; font-weight: bold; }
+                </style>
+            </widget>
+            <widget type="QLabel" role="label_filename">
+                <text>Filename:</text>
+            </widget>
+            <widget type="QLineEdit" role="filename_input">
+                <text>Test Case</text>
+                <style>QLineEdit { padding: 5px; min-width: 120px; }</style>
+            </widget>
+            <widget type="QCheckBox" role="archive_cb">
+                <text>Archive (ZIP)</text>
+            </widget>
+            <widget type="QCheckBox" role="graphics_cb">
+                <text>Graphics</text>
+            </widget>
+            <widget type="QCheckBox" role="time_cb">
+                <text>Date &amp; Time</text>
+                <checked>true</checked>
+            </widget>
+            <widget type="QPushButton" role="btn_pull">
+                <text>Pull Logs</text>
+                <style>QPushButton { background-color: #34495e; color: white; padding: 5px 15px; border-radius: 4px; }</style>
+            </widget>
+            <stretch/>
+        </row>
+        <row>
+            <widget type="QLabel" role="status">
+                <text>Status: Idle</text>
+                <style>QLabel { font-weight: bold; font-size: 14px; }</style>
+            </widget>
+            <widget type="QProgressBar" role="progress_bar">
+                <style>QProgressBar { min-width: 300px; text-align: center; }</style>
+            </widget>
+            <stretch/>
+        </row>
+        <widget type="QTextEdit" role="output">
+            <readonly>true</readonly>
+            <style>QTextEdit { font-family: monospace; background-color: #f5f5f5; padding: 5px; }</style>
+        </widget>
+        <row>
+            <stretch/>
+            <widget type="QPushButton" role="btn_stop">
+                <text>Stop</text>
+                <style>QPushButton { background-color: #e74c3c; color: white; padding: 8px 16px; border-radius: 4px; border: none; font-weight: bold; } QPushButton:hover { background-color: #c0392b; } QPushButton:disabled { background-color: #bdc3c7; color: #7f8c8d; }</style>
+            </widget>
+        </row>
+        <controller type="ParsedLogsController" />
+    </tab>
+
+    <tab title="Parsed logs with device selection" id="parsed_logs_with_device_selection">
+        <row>
+            <widget type="QComboBox" role="device_dropdown">
+                <style>QComboBox { padding: 5px; min-width: 150px; }</style>
+            </widget>
+            <widget type="QPushButton" role="btn_refresh">
+                <text>Refresh</text>
+                <style>QPushButton { padding: 5px 10px; }</style>
+            </widget>
+            <stretch/>
+        </row>
+        <row>
+            <widget type="QLabel" role="label_filename">
+                <text>Filename:</text>
+            </widget>
+            <widget type="QLineEdit" role="filename_input">
+                <text>Test Case</text>
+                <style>QLineEdit { padding: 5px; min-width: 120px; }</style>
+            </widget>
+            <widget type="QCheckBox" role="archive_cb">
+                <text>Archive (ZIP)</text>
+            </widget>
+            <widget type="QCheckBox" role="graphics_cb">
+                <text>Graphics</text>
+            </widget>
+            <widget type="QCheckBox" role="time_cb">
+                <text>Date &amp; Time</text>
+                <checked>true</checked>
+            </widget>
+            <widget type="QPushButton" role="btn_pull">
+                <text>Pull Logs</text>
+                <style>QPushButton { background-color: #34495e; color: white; padding: 5px 15px; border-radius: 4px; }</style>
+            </widget>
+            <stretch/>
+        </row>
+        <row>
+            <widget type="QLabel" role="status">
+                <text>Status: Idle</text>
+                <style>QLabel { font-weight: bold; font-size: 14px; }</style>
+            </widget>
+            <widget type="QProgressBar" role="progress_bar">
+                <style>QProgressBar { min-width: 300px; text-align: center; }</style>
+            </widget>
+            <stretch/>
+        </row>
+        <widget type="QTextEdit" role="output">
+            <readonly>true</readonly>
+            <style>QTextEdit { font-family: monospace; background-color: #f5f5f5; padding: 5px; }</style>
+        </widget>
+        <row>
+            <stretch/>
+            <widget type="QPushButton" role="btn_stop">
+                <text>Stop</text>
+                <style>QPushButton { background-color: #e74c3c; color: white; padding: 8px 16px; border-radius: 4px; border: none; font-weight: bold; } QPushButton:hover { background-color: #c0392b; }</style>
+            </widget>
+        </row>
+        <controller type="ParsedLogsController" />
+    </tab>
+
+    <toolbar>
+        <position>left</position>
+        <background>#1a252f</background>
+    </toolbar>
+</Config>

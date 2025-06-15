@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <background>#1a252f</background>
+    <font_color>white</font_color>
+    <position>left</position>
+    <width>60</width>
+
+    <logo>
+        <icon>logo</icon>
+        <width>40</width>
+        <height>30</height>
+    </logo>
+
+    <buttons>
+        <button>
+            <icon>home</icon>
+            <text>Home</text>
+            <tab>home.xml</tab>
+            <tab_name>Home</tab_name>
+        </button>
+        <button>
+            <icon>device</icon>
+            <text>Devices</text>
+            <tab>devices.xml</tab>
+            <tab_name>Devices</tab_name>
+        </button>
+        <button>
+            <icon>os</icon>
+            <text>Builds Dashboard</text>
+            <tab>firmware.xml</tab>
+            <tab_name>Builds Dashboard</tab_name>
+        </button>
+        <button>
+            <icon>jira</icon>
+            <text>Jira</text>
+            <tab>jira.xml</tab>
+            <tab_name>Jira</tab_name>
+        </button>
+        <button>
+            <icon>report</icon>
+            <text>Report</text>
+            <tab>report.xml</tab>
+            <tab_name>Report</tab_name>
+        </button>
+        <button>
+            <icon>terminal</icon>
+            <text>Terminal window</text>
+            <tab>terminal.xml</tab>
+            <tab_name>Terminal</tab_name>
+            <tab_index>0</tab_index>
+        </button>
+        
+    </buttons>
+
+    <bottom_buttons>
+        <button>
+            <icon>settings</icon>
+            <text>Settings</text>
+            <tab>settings.xml</tab>
+            <tab_name>Settings</tab_name>
+        </button>
+        <button>
+            <icon>help</icon>
+            <text>Help</text>
+            <tab>help.xml</tab>
+            <tab_name>Help</tab_name>
+        </button>
+        <button>
+            <icon>hide</icon>
+            <text>Toggle</text>
+            <action>toggle_mode()</action>
+        </button>
+    </bottom_buttons>
+</Config>

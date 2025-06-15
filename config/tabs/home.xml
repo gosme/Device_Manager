@@ -1,0 +1,155 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab>
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>Device Manager</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+        </widget>
+        <card>
+            <style>
+                QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px;
+                }
+            </style>
+            <row>
+                <widget type="QLabel" role="version">
+                    <text />
+                    <color>#777</color>
+                    <font_size>12</font_size>
+                    <style>
+                        QLabel { border: none; margin-left: 10px; }
+                    </style>
+                </widget>
+                <widget type="QLabel" role="update_msg">
+                    <text />
+                    <color>#28a745</color>
+                    <font_size>12</font_size>
+                    <font_weight>bold</font_weight>
+                    <style>
+                        QLabel { border: none; margin-left: 5px; }
+                    </style>
+                </widget>
+                <stretch />
+                <widget type="QPushButton" role="update_btn">
+                    <text>Update</text>
+                    <action>on_update_clicked()</action>
+                    <style>
+                        QPushButton {
+                            border: 1px solid #aaa;
+                            border-radius: 4px;
+                            padding: 4px 10px;
+                            background-color: #f0f0f0;
+                            margin-right: 10px;
+                        }
+                        QPushButton:hover {
+                            background-color: #e0e0e0;
+                        }
+                    </style>
+                </widget>
+            </row>
+        </card>
+        
+        <row>
+            <card role="devices_card">
+                <style>
+                    QFrame {
+                        border: 1px solid #ccc;
+                        border-radius: 8px;
+                        background-color: transparent;
+                        padding: 10px;
+                    }
+                    QLabel { border: none; }
+                </style>
+                <column>
+                    <row>
+                        <widget type="QLabel" role="devices_icon">
+                            <text />
+                        </widget>
+                        <widget type="QLabel" role="devices_title">
+                            <text>Devices connected</text>
+                            <font_size>14</font_size>
+                        </widget>
+                        <stretch />
+                    </row>
+                    <row>
+                        <widget type="QLabel" role="devices_count">
+                            <text>0</text>
+                            <font_size>36</font_size>
+                            <font_weight>bold</font_weight>
+                        </widget>
+                        <stretch />
+                    </row>
+                </column>
+            </card>
+            <card role="processes_card">
+                <style>
+                    QFrame {
+                        border: 1px solid #ccc;
+                        border-radius: 8px;
+                        background-color: transparent;
+                        padding: 10px;
+                    }
+                    QLabel { border: none; }
+                </style>
+                <column>
+                    <row>
+                        <widget type="QLabel" role="processes_icon">
+                            <text />
+                        </widget>
+                        <widget type="QLabel" role="processes_title">
+                            <text>Processes running</text>
+                            <font_size>14</font_size>
+                        </widget>
+                        <stretch />
+                    </row>
+                    <row>
+                        <widget type="QLabel" role="processes_count">
+                            <text>0</text>
+                            <font_size>36</font_size>
+                            <font_weight>bold</font_weight>
+                        </widget>
+                        <stretch />
+                    </row>
+                </column>
+            </card>
+        </row>
+        
+        <card role="process_list_card">
+            <style>
+                QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px;
+                }
+            </style>
+            <widget type="QScrollArea" role="process_list">
+                <style>
+                    QScrollArea {
+                        border: none;
+                        background: transparent;
+                    }
+                    QWidget {
+                        background: transparent;
+                    }
+                    QLabel {
+                        font-size: 12px;
+                    }
+                </style>
+            </widget>
+        </card>
+        
+        <controller type="HomeController" />
+    </tab>
+    <toolbar>
+        <position>left</position>
+        <background>#f0f0f0</background>
+        <width>150</width>
+    </toolbar>
+</Config>

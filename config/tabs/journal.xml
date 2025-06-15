@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Config>
+    <!-- First tab: Journal logs tab with device dropdown selector (shown when 'Journal logs' button pressed in 'Terminal selector' tab) -->
+    <tab title="Journal logs with device dropdown" id="journal_with_dropdown">
+        <row>
+            <widget type="QComboBox" role="device_dropdown">
+                <style>
+                    QComboBox { padding: 5px; min-width: 150px; }
+                </style>
+            </widget>
+            <widget type="QPushButton" role="btn_refresh">
+                <icon>refresh</icon>
+                <tooltip>Refresh device list</tooltip>
+            </widget>
+            <widget type="QComboBox" role="command_mode">
+                <style>
+                    QComboBox { padding: 5px; min-width: 100px; }
+                </style>
+            </widget>
+            <widget type="QPushButton" role="btn_start">
+                <text>Start</text>
+                <style>
+                    QPushButton { background-color: blue; color: white; padding: 5px; }
+                </style>
+            </widget>
+            <stretch/>
+        </row>
+        <row>
+            <widget type="QLabel" role="status">
+                <text>Status: Idle</text>
+                <color>blue</color>
+            </widget>
+            <stretch/>
+        </row>
+        <widget type="QTextEdit" role="output">
+            <readonly>true</readonly>
+            <style>
+                QTextEdit { font-family: monospace; background-color: #f5f5f5; }
+            </style>
+        </widget>
+        <row>
+            <widget type="QPushButton" role="btn_skip">
+                <text>Skip (Graceful)</text>
+            </widget>
+            <widget type="QPushButton" role="btn_stop">
+                <text>Stop (Kill)</text>
+                <style>
+                    QPushButton { background-color: red; color: white; }
+                </style>
+            </widget>
+            <widget type="QPushButton" role="btn_restart">
+                <text>Restart</text>
+                <style>
+                    QPushButton { background-color: green; color: white; }
+                </style>
+            </widget>
+            <widget type="QPushButton" role="btn_clear">
+                <text>Clear Output</text>
+            </widget>
+            <widget type="QPushButton" role="btn_open_log">
+                <text>Open Log File</text>
+            </widget>
+            <stretch/>
+        </row>
+        <controller type="JournalLogsController" />
+    </tab>
+    <!-- Second tab: Journal logs tab for specific device (shown when 'Journal logs' button pressed on device tab) -->
+    <tab title="Journal logs for device" id="journal_for_device">
+        <row>
+            <widget type="QLabel" role="device_name" >
+                <style>
+                    QLabel { padding: 5px; font-weight: bold; }
+                </style>
+            </widget>
+            <stretch/>
+            <widget type="QComboBox" role="command_mode">
+                <style>
+                    QComboBox { padding: 5px; min-width: 100px; }
+                </style>
+            </widget>
+            <widget type="QPushButton" role="btn_start">
+                <text>Start</text>
+                <style>
+                    QPushButton { background-color: blue; color: white; padding: 5px; }
+                </style>
+            </widget>
+            <stretch/>
+        </row>
+        <row>
+            <widget type="QLabel" role="status">
+                <text>Status: Idle</text>
+                <color>blue</color>
+            </widget>
+            <stretch/>
+        </row>
+        <widget type="QTextEdit" role="output">
+            <readonly>true</readonly>
+            <style>
+                QTextEdit { font-family: monospace; background-color: #f5f5f5; }
+            </style>
+        </widget>
+        <row>
+            <widget type="QPushButton" role="btn_skip">
+                <text>Skip (Graceful)</text>
+            </widget>
+            <widget type="QPushButton" role="btn_stop">
+                <text>Stop (Kill)</text>
+                <style>
+                    QPushButton { background-color: red; color: white; }
+                </style>
+            </widget>
+            <widget type="QPushButton" role="btn_restart">
+                <text>Restart</text>
+                <style>
+                    QPushButton { background-color: green; color: white; }
+                </style>
+            </widget>
+            <widget type="QPushButton" role="btn_clear">
+                <text>Clear Output</text>
+            </widget>
+            <widget type="QPushButton" role="btn_open_log">
+                <text>Open Log File</text>
+            </widget>
+            <stretch/>
+        </row>
+        <controller type="JournalLogsController" />
+    </tab>
+</Config>
