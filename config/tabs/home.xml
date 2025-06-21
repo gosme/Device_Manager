@@ -144,7 +144,24 @@
                 </style>
             </widget>
         </card>
-        
+        <card role="agents_card">
+            <style>
+                QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 10px;
+                }
+            </style>
+            <widget type="QLabel" role="routing_status">
+                <text></text>
+                <color>#555</color>
+                <font_style>italic</font_style>
+            </widget>
+            <widget type="ChatInput" role="agents_input">
+                <placeholder>Provide an intent/utterance or ask local AI for help.</placeholder>
+            </widget>
+        </card>
         <controller type="HomeController" />
     </tab>
     <toolbar>

@@ -30,5 +30,6 @@
         <Icon key="ubuntu" path="icons/ubuntu.png"/>
         <Icon key="powershell" path="icons/powershell.png"/>
         <Icon key="gitbash" path="icons/gitbash.png"/>
+        <Icon key="chat" path="icons/chat.png"/>
     </Icons>
 </Config>

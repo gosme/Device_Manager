@@ -1,0 +1,44 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab>
+        <background>white</background>
+        <font_color>black</font_color>
+        <widget type="QLabel" role="title">
+            <text>Local AI Assistant</text>
+            <font_size>30</font_size>
+            <font_weight>bold</font_weight>
+        </widget>
+        <widget type="QLabel" role="message">
+            <text>A friendly helper running entirely on your device. Ask a question or provide an intent/utterance!</text>
+            <font_style>italic</font_style>
+        </widget>
+        <card role="agents_card">
+            <style>
+                QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 10px;
+                }
+            </style>
+            <widget type="QScrollArea" role="chat_scroll_area">
+                <style>
+                    QScrollArea {
+                        border: 1px solid #ccc;
+                        background: transparent;
+                        border-radius: 8px;
+                    }
+                </style>
+            </widget>
+            <widget type="QLabel" role="routing_status">
+                <text></text>
+                <color>#555</color>
+                <font_style>italic</font_style>
+            </widget>
+            <widget type="ChatInput" role="agents_input">
+                <placeholder>Provide an intent/utterance or ask local AI for help.</placeholder>
+            </widget>
+        </card>
+        <controller type="ChatController" />
+    </tab>
+</Config>

@@ -169,5 +169,7 @@
     <window>
         <resize_window>false</resize_window>
     </window>
-
+    <chat>
+        <enabled>true</enabled>
+    </chat>
 </config>

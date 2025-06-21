@@ -54,6 +54,12 @@
 
     <bottom_buttons>
         <button>
+            <icon>chat</icon>
+            <text>Chat</text>
+            <tab>chat.xml</tab>
+            <tab_name>Chat</tab_name>
+        </button>
+        <button>
             <icon>settings</icon>
             <text>Settings</text>
             <tab>settings.xml</tab>
