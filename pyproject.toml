@@ -23,6 +23,8 @@ dependencies = [
     "keyring",
     "more-itertools",
     "fast-langdetect",
+    "ollama",
+    "semantic-router[local]",
 ]
 
 [project.scripts]
