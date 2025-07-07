@@ -1,6 +1,15 @@
 /scripts/
 /logs/
+/chat-logs/
+/debug-logs/
 .venv/
 modules/device/platform-tools/
 modules/firmware/unzipped_files/
 modules/firmware/file/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.pytest_cache/

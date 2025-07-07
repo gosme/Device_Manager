@@ -7,6 +7,7 @@
             <text>Local AI Assistant</text>
             <font_size>30</font_size>
             <font_weight>bold</font_weight>
+            <alignment>left</alignment>
         </widget>
         <widget type="QLabel" role="message">
             <text>A friendly helper running entirely on your device. Ask a question or provide an intent/utterance!</text>

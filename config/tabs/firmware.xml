@@ -5,7 +5,7 @@
             <text>Builds Dashboard</text>
             <font_size>30</font_size>
             <font_weight>bold</font_weight>
-            <alignment>center</alignment>
+            <alignment>left</alignment>
         </widget>
         <card>
             <style>
@@ -84,7 +84,7 @@
                 <text>Build from Product Selection</text>
                 <font_size>30</font_size>
                 <font_weight>bold</font_weight>
-                <alignment>center</alignment>
+                <alignment>left</alignment>
             </widget>
             <stretch />
         </row>
@@ -290,7 +290,7 @@
                 <text>Build for {DSN}</text>
                 <font_size>30</font_size>
                 <font_weight>bold</font_weight>
-                <alignment>center</alignment>
+                <alignment>left</alignment>
             </widget>
             <stretch />
         </row>
@@ -400,7 +400,7 @@
                 <text>Flash {BUILD_NAME}</text>
                 <font_size>30</font_size>
                 <font_weight>bold</font_weight>
-                <alignment>center</alignment>
+                <alignment>left</alignment>
             </widget>
             <stretch />
         </row>

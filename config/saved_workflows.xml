@@ -1,0 +1,23 @@
+<?xml version="1.0" ?>
+<Config>
+    <Workflows>
+        <Workflow id="1">
+            <Name>a</Name>
+            <Tasks>
+                <Task>
+                    <Action>Android commands</Action>
+                    <SubAction>android_1</SubAction>
+                </Task>
+            </Tasks>
+        </Workflow>
+        <Workflow id="2">
+            <Name>b</Name>
+            <Tasks>
+                <Task>
+                    <Action>Android commands</Action>
+                    <SubAction>android_11</SubAction>
+                </Task>
+            </Tasks>
+        </Workflow>
+    </Workflows>
+</Config>

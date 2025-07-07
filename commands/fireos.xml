@@ -1,3 +1,125 @@
 <commands>
-    <command type="journal" command="logcat"/>
+    <command type="general" command="help" usage="List all comands" id="fireos_1" />
+    <command type="adb_server" command="kill-server" usage="Terminate the adb server process" id="fireos_2" />
+    <command type="adb_server" command="start-server" usage="Start the adb server process" id="fireos_3" />
+    <command type="adb_reboot" command="reboot" usage="Reboot the device" id="fireos_4" />
+    <command type="adb_reboot" command="reboot recovery" usage="Reboot device into recovery mode" id="fireos_5" />
+    <command type="adb_reboot" command="reboot-bootloader" usage="Reboot device into bootloader mode" id="fireos_6" />
+    <command type="adb_reboot" command="root" usage="Restart adbd with root permissions" id="fireos_7" />
+    <command type="shell" command="shell" usage="Start a remote shell in the target device" id="fireos_8" />
+    <command type="devices" command="usb" usage="Restart adbd listening on USB" id="fireos_9" />
+    <command type="devices" command="devices" usage="List all connected devices" id="fireos_10" />
+    <command type="devices" command="devices -l" usage="List all connected devices with their product/model info" id="fireos_11" />
+    <command type="devices" command="connect ip_address_of_device" usage="Connect to a device via TCP/IP" id="fireos_12" />
+    <command type="get_device_android_version" command="shell getprop ro.build.version.release" usage="Get the Android OS version of the device" id="fireos_13" />
+    <command type="logcat" command="logcat" usage="View device log stream" id="fireos_14" />
+    <command type="logcat" command="logcat -c" usage="Clear (flush) the entire log and exit" id="fireos_15" />
+    <command type="logcat" command="logcat -d &gt; [path_to_file]" usage="Dump the log to a file and exit" id="fireos_16" />
+    <command type="logcat" command="bugreport &gt; [path_to_file]" usage="Dump device information for bug reporting (Note: Amazon devices may have different log capture mechanisms or restricted output)" id="fireos_17" />
+    <command type="files" command="push [source] [destination]" usage="Copy file or directory to device" id="fireos_18" />
+    <command type="files" command="pull [device file location] [local file location]" usage="Copy file or directory from device" id="fireos_19" />
+    <command type="app_install" command="-e install path/to/app.apk" usage="Install an app package on an emulator (Note: Apps relying on Google Play Services may fail or crash on FireOS)" id="fireos_20" />
+    <command type="app_install" command="devices | tail -n +2 | cut -sf 1 | xargs -IX adb -s X install -r com.myAppPackage" usage="Install the given app on all connected devices. (Note: Apps relying on Google Play Services may fail or crash on FireOS)" id="fireos_21" />
+    <command type="uninstalling_app_from_device" command="uninstall com.myAppPackage" usage="Remove an app package from the device" id="fireos_22" />
+    <command type="uninstalling_app_from_device" command="uninstall &lt;app .apk name&gt;" usage="Remove an app package from the device" id="fireos_23" />
+    <command type="uninstalling_app_from_device" command="uninstall -k &lt;app .apk name&gt;" usage="Remove an app package but keep its data and cache" id="fireos_24" />
+    <command type="uninstalling_app_from_device" command="shell pm uninstall com.example.MyApp" usage="Uninstall an app package using the device package manager" id="fireos_25" />
+    <command type="uninstalling_app_from_device" command="shell pm clear [package]" usage="Delete all data associated with a package" id="fireos_26" />
+    <command type="uninstalling_app_from_device" command="devices | tail -n +2 | cut -sf 1 | xargs -IX adb -s X uninstall com.myAppPackage" usage="Uninstall the given app from all connected devices" id="fireos_27" />
+    <command type="update_app" command="install -r yourApp.apk" usage="Reinstall an existing app, keeping its data (Note: Apps relying on Google Play Services may fail or crash on FireOS)" id="fireos_28" />
+    <command type="update_app" command="install –k &lt;.apk file path on computer&gt;" usage="Install an app package (Note: Apps relying on Google Play Services may fail or crash on FireOS)" id="fireos_29" />
+    <command type="home_button" command="shell am start -W -c android.intent.category.HOME -a android.intent.action.MAIN" usage="Navigate to the device home screen (Note: Some standard intents might be replaced by Amazon custom intents on FireOS)" id="fireos_30" />
+    <command type="activity_manager" command="shell am start -a android.intent.action.VIEW" usage="Start the default view action (Note: Some standard intents might be replaced by Amazon custom intents on FireOS)" id="fireos_31" />
+    <command type="activity_manager" command="shell am broadcast -a 'my_action'" usage="Send a broadcast intent" id="fireos_32" />
+    <command type="activity_manager" command="shell am start -a android.intent.action.CALL -d tel:+972527300294" usage="Make a phone call to a specific number (Note: Some standard intents might be replaced by Amazon custom intents on FireOS)" id="fireos_33" />
+    <command type="activity_manager" command="shell am start -a android.intent.action.SENDTO -d sms:+972527300294   --es  sms_body &quot;Test --ez exit_on_sent false" usage="Open the SMS compose screen with a pre-filled message (Note: Some standard intents might be replaced by Amazon custom intents on FireOS)" id="fireos_34" />
+    <command type="activity_manager" command="shell pm reset-permissions -p your.app.package" usage="Reset all runtime permissions for the given package" id="fireos_35" />
+    <command type="activity_manager" command="shell pm grant [packageName] [ Permission]" usage="Grant a specific runtime permission to an app" id="fireos_36" />
+    <command type="activity_manager" command="shell pm revoke [packageName] [ Permission]" usage="Revoke a specific runtime permission from an app" id="fireos_37" />
+    <command type="activity_manager" command="shell wm size 2048x1536" usage="Override device display size to 2048x1536" id="fireos_38" />
+    <command type="activity_manager" command="shell wm density 288" usage="Override device display density to 288 dpi" id="fireos_39" />
+    <command type="activity_manager" command="shell wm size reset" usage="Reset the device display size to default" id="fireos_40" />
+    <command type="activity_manager" command="shell wm density reset" usage="Reset the device display density to default" id="fireos_41" />
+    <command type="print_text" command="shell input text 'Wow, it so cool feature'" usage="Type text into the focused input field on the device" id="fireos_42" />
+    <command type="screenshot" command="shell screencap -p /sdcard/screenshot.png" usage="Take a screenshot and save it to the device SD card" id="fireos_43" />
+    <command type="screenshot" command="shell screenrecord /sdcard/NotAbleToLogin.mp4" usage="Record the device display to an mp4 video file" id="fireos_44" />
+    <command type="key_event" command="shell input keyevent 3" usage="Simulate pressing the Home button" id="fireos_45" />
+    <command type="key_event" command="shell input keyevent 4" usage="Simulate pressing the Back button" id="fireos_46" />
+    <command type="key_event" command="shell input keyevent 5" usage="Simulate pressing the Call button" id="fireos_47" />
+    <command type="key_event" command="shell input keyevent 6" usage="Simulate pressing the End Call button" id="fireos_48" />
+    <command type="key_event" command="shell input keyevent 26" usage="Simulate pressing the Power button (Toggle screen ON/OFF)" id="fireos_49" />
+    <command type="key_event" command="shell input keyevent 27" usage="Simulate pressing the Camera button" id="fireos_50" />
+    <command type="key_event" command="shell input keyevent 64" usage="Simulate pressing the Explorer/Browser button" id="fireos_51" />
+    <command type="key_event" command="shell input keyevent 66" usage="Simulate pressing the Enter button" id="fireos_52" />
+    <command type="key_event" command="shell input keyevent 67" usage="Simulate pressing the Delete/Backspace button" id="fireos_53" />
+    <command type="key_event" command="shell input keyevent 207" usage="Simulate pressing the Contacts button" id="fireos_54" />
+    <command type="key_event" command="shell input keyevent 220 / 221" usage="Simulate pressing Brightness Down/Up" id="fireos_55" />
+    <command type="key_event" command="shell input keyevent 277 / 278 /279" usage="Simulate pressing Cut/Copy/Paste" id="fireos_56" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.PUT --es key key_name --es value &quot;hello world!&quot;'" usage="Add a value to shared preferences" id="fireos_57" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.REMOVE --es key key_name'" usage="Remove a value from shared preferences" id="fireos_58" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.CLEAR --es key key_name'" usage="Clear all shared preferences" id="fireos_59" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.PUT --es name Game --es key level --ei value 10'" usage="Add a value into a specific shared preference file" id="fireos_60" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.PUT --es key string --es value &quot;hello world!&quot;'" usage="Add a string value to shared preferences" id="fireos_61" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.PUT --es key boolean --ez value true'" usage="Add a boolean value to shared preferences" id="fireos_62" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.PUT --es key float --ef value 3.14159'" usage="Add a float value to shared preferences" id="fireos_63" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.PUT --es key int --ei value 2015'" usage="Add an integer value to shared preferences" id="fireos_64" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.PUT --es key long --el value 9223372036854775807'" usage="Add a long value to shared preferences" id="fireos_65" />
+    <command type="shpref" command="shell 'am broadcast -a org.example.app.sp.CLEAR --ez restart true'" usage="Clear shared preferences and restart the app" id="fireos_66" />
+    <command type="monkey" command="shell monkey -p com.myAppPackage -v 10000 -s 100" usage="Run the UI monkey to generate 10000 random UI events for an app" id="fireos_67" />
+    <command type="paths" command="shell ls" usage="List directory contents on the device" id="fireos_68" />
+    <command type="paths" command="shell ls -s" usage="List directory contents with file sizes" id="fireos_69" />
+    <command type="paths" command="shell ls -R" usage="List directory contents recursively" id="fireos_70" />
+    <command type="device_onformation" command="get-statе" usage="Print the device state (offline | bootloader | device)" id="fireos_71" />
+    <command type="device_onformation" command="get-serialno" usage="Print the device serial number" id="fireos_72" />
+    <command type="device_onformation" command="shell dumpsys iphonesybinfo" usage="Get the device IMEI" id="fireos_73" />
+    <command type="device_onformation" command="shell netstat" usage="List TCP connectivity and network statistics" id="fireos_74" />
+    <command type="device_onformation" command="shell pwd" usage="Print the current working directory on the device" id="fireos_75" />
+    <command type="device_onformation" command="shell dumpsys battery" usage="Display battery status information" id="fireos_76" />
+    <command type="device_onformation" command="shell pm list features" usage="List all hardware features of the device" id="fireos_77" />
+    <command type="device_onformation" command="shell service list" usage="List all running system services" id="fireos_78" />
+    <command type="device_onformation" command="shell dumpsys activity &lt;package&gt;/&lt;activity&gt;" usage="Display activity manager state for a specific package or activity" id="fireos_79" />
+    <command type="device_onformation" command="shell ps" usage="Print the status of all running processes" id="fireos_80" />
+    <command type="device_onformation" command="shell wm size" usage="Display the current screen resolution" id="fireos_81" />
+    <command type="package_info" command="shell list packages" usage="List all installed package names" id="fireos_82" />
+    <command type="package_info" command="shell list packages -r" usage="List all package names along with the paths to their APKs" id="fireos_83" />
+    <command type="package_info" command="shell list packages -3" usage="List third-party package names only" id="fireos_84" />
+    <command type="package_info" command="shell list packages -s" usage="List system package names only" id="fireos_85" />
+    <command type="package_info" command="shell list packages -u" usage="List all package names including uninstalled ones" id="fireos_86" />
+    <command type="package_info" command="shell dumpsys package packages" usage="Dump detailed information about all installed packages" id="fireos_87" />
+    <command type="package_info" command="shell dump &lt;name&gt;" usage="Dump information for a specific package (alias for dumpsys package &lt;name&gt;)" id="fireos_88" />
+    <command type="package_info" command="shell path &lt;package&gt;" usage="Print the file path to the APK of the given package" id="fireos_89" />
+    <command type="package_info" command="shell dumpsys battery set level &lt;n&gt;" usage="Change the simulated battery level percentage (0-100)" id="fireos_90" />
+    <command type="package_info" command="shell dumpsys battery set status&lt;n&gt;" usage="Change the simulated battery status (e.g. charging, discharging)" id="fireos_91" />
+    <command type="package_info" command="shell dumpsys battery reset" usage="Reset the battery simulation to actual hardware behavior" id="fireos_92" />
+    <command type="package_info" command="shell dumpsys battery set usb &lt;n&gt;" usage="Simulate USB connection state (1=connected, 0=disconnected)" id="fireos_93" />
+    <command type="package_info" command="shell wm size WxH" usage="Set the screen resolution to Width x Height" id="fireos_94" />
+    <command type="device_related_commands" command="reboot-recovery" usage="Reboot the device into recovery mode" id="fireos_95" />
+    <command type="device_related_commands" command="reboot fastboot" usage="Reboot the device into fastboot mode" id="fireos_96" />
+    <command type="device_related_commands" command="shell screencap -p &quot;/path/to/screenshot.png&quot;" usage="capture screenshot" id="fireos_97" />
+    <command type="device_related_commands" command="shell screenrecord &quot;/path/to/record.mp4&quot;" usage="record device screen" id="fireos_98" />
+    <command type="device_related_commands" command="backup -apk -all -f backup.ab" usage="Create a full backup of all apps and their data" id="fireos_99" />
+    <command type="device_related_commands" command="backup -apk -shared -all -f backup.ab" usage="Create a full backup including shared storage (SD card) data" id="fireos_100" />
+    <command type="device_related_commands" command="backup -apk -nosystem -all -f backup.ab" usage="Create a backup of non-system apps only" id="fireos_101" />
+    <command type="device_related_commands" command="restore backup.ab" usage="Restore a device from a backup file" id="fireos_102" />
+    <command type="device_related_commands" command="shell am start|startservice|broadcast &lt;INTENT&gt;[&lt;COMPONENT&gt;]" usage="Start an Activity, Service, or send a Broadcast using an Intent (Note: Some standard intents might be replaced by Amazon custom intents on FireOS)" id="fireos_103" />
+    <command type="device_related_commands" command="shell am start -a android.intent.action.VIEW -d URL" usage="Open a URL in the default browser (Note: Some standard intents might be replaced by Amazon custom intents on FireOS)" id="fireos_104" />
+    <command type="device_related_commands" command="shell am start -t image/* -a android.intent.action.VIEW" usage="Open the gallery app to view images (Note: Some standard intents might be replaced by Amazon custom intents on FireOS)" id="fireos_105" />
+    <command type="logs" command="logcat [options] [filter] [filter]" usage="View device logs with specific options and filters" id="fireos_106" />
+    <command type="logs" command="bugreport" usage="Generate a zip file containing bug reports and dumpsys output (Note: Amazon devices may have different log capture mechanisms or restricted output)" id="fireos_107" />
+    <command type="other" command="backup" usage="Create a full backup of the device" id="fireos_108" />
+    <command type="other" command="restore" usage="Restore the device from a backup" id="fireos_109" />
+    <command type="other" command="sideload" usage="Push and flash custom ROMs and zips from your computer" id="fireos_110" />
+    <command type="other" command="devices" usage="List all connected devices" id="fireos_111" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.PUT --es key key_name --es value &quot;hello world!&quot;'" usage="Add a value to shared preferences" id="fireos_112" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.REMOVE --es key key_name'" usage="Remove a value from shared preferences" id="fireos_113" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.CLEAR --es key key_name'" usage="Clear all shared preferences" id="fireos_114" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.PUT --es name Game --es key level --ei value 10'" usage="Add a value into a specific shared preference file" id="fireos_115" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.PUT --es key string --es value &quot;hello world!&quot;'" usage="Add a string value to shared preferences" id="fireos_116" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.PUT --es key boolean --ez value true'" usage="Add a boolean value to shared preferences" id="fireos_117" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.PUT --es key float --ef value 3.14159'" usage="Add a float value to shared preferences" id="fireos_118" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.PUT --es key int --ei value 2015'" usage="Add an integer value to shared preferences" id="fireos_119" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.PUT --es key long --el value 9223372036854775807'" usage="Add a long value to shared preferences" id="fireos_120" />
+    <command type="other" command="shell 'am broadcast -a org.example.app.sp.CLEAR --ez restart true'" usage="Clear shared preferences and restart the app" id="fireos_121" />
+    <command type="other" command="devices | tail -n +2 | cut -sf -1 | xargs -I X adb -s X shell getprop ro.build.version.release" usage="Print Android OS version of all connected devices" id="fireos_122" />
+    <command type="package_info" command="shell pm list packages amazon" usage="List Amazon-specific packages on FireOS" id="fireos_123" />
 </commands>

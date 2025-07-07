@@ -1,0 +1,153 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Config>
+    <tab title="Workflow Dashboard" id="workflow_dashboard">
+        <row>
+            <widget type="QLabel" role="title">
+                <text>Workflow Dashboard</text>
+                <font_size>30</font_size>
+                <font_weight>bold</font_weight>
+                <alignment>left</alignment>
+            </widget>
+            <stretch />
+        </row>
+        <card>
+            <style>
+                .QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px;
+                }
+            </style>
+            <row>
+                <widget type="QLabel" role="subtitle">
+                    <text>Saved workflows</text>
+                    <font_size>16</font_size>
+                    <font_weight>bold</font_weight>
+                    <style>
+                        QLabel { border: none; padding: 0px; }
+                    </style>
+                </widget>
+                <stretch />
+                <button type="button" role="btn_new_workflow">
+                    <text>New Workflow</text>
+                    <action>open_new_workflow_tab</action>
+                </button>
+                <button role="btn_refresh_dashboard">
+                    <icon>refresh</icon>
+                    <tooltip>Refresh workflows</tooltip>
+                </button>
+            </row>
+            <widget type="QScrollArea" role="workflows_container">
+                <style>
+                    QScrollArea { border: none; background: transparent; min-height: 135px; }
+                    QWidget { background: transparent; }
+                </style>
+            </widget>
+        </card>
+        <card>
+            <style>
+                .QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px;
+                }
+            </style>
+            <row>
+                <widget type="QLabel" role="subtitle">
+                    <text>Active / Executed workflows</text>
+                    <font_size>16</font_size>
+                    <font_weight>bold</font_weight>
+                    <style>
+                        QLabel { border: none; padding: 0px; }
+                    </style>
+                </widget>
+                <stretch />
+                <button role="btn_refresh_exec_dashboard">
+                    <icon>refresh</icon>
+                    <tooltip>Refresh executed workflows</tooltip>
+                </button>
+            </row>
+            <widget type="QScrollArea" role="executed_workflows_container">
+                <style>
+                    QScrollArea { border: none; background: transparent; min-height: 135px; }
+                    QWidget { background: transparent; }
+                </style>
+            </widget>
+        </card>
+        <controller type="WorkflowDashboardController" />
+    </tab>
+    <tab title="New Workflow" id="new_workflow">
+        <row>
+            <widget type="QLabel" role="title">
+                <text>New Workflow</text>
+                <font_size>30</font_size>
+                <font_weight>bold</font_weight>
+                <alignment>left</alignment>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <widget type="QLineEdit" role="workflow_name_input">
+                <placeholder>Workflow Name</placeholder>
+                <style>
+                    QLineEdit {
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        padding: 8px 12px;
+                        font-size: 16px;
+                        background: transparent;
+                    }
+                </style>
+            </widget>
+            <button role="btn_save_workflow">
+                <text>Save</text>
+                <tooltip>Save workflow</tooltip>
+            </button>
+        </row>
+        <widget type="QScrollArea" role="workflow_tasks_container">
+            <style>
+                QScrollArea { border: none; background: transparent; min-height: 300px; }
+                QWidget { background: transparent; }
+            </style>
+        </widget>
+        <controller type="NewWorkflowController" />
+    </tab>
+    <tab title="Workflow Editor" id="workflow_editor">
+        <row>
+            <widget type="QLabel" role="title">
+                <text>Workflow Editor</text>
+                <font_size>30</font_size>
+                <font_weight>bold</font_weight>
+                <alignment>left</alignment>
+            </widget>
+            <stretch />
+        </row>
+        <row>
+            <widget type="QLineEdit" role="workflow_name_input">
+                <placeholder>Workflow Name</placeholder>
+                <style>
+                    QLineEdit {
+                        border: 1px solid #ccc;
+                        border-radius: 6px;
+                        padding: 8px 12px;
+                        font-size: 16px;
+                        background: transparent;
+                    }
+                </style>
+            </widget>
+            <button role="btn_edit_save_workflow">
+                <text>Edit</text>
+                <tooltip>Edit workflow</tooltip>
+            </button>
+        </row>
+        <widget type="QScrollArea" role="workflow_tasks_container">
+            <style>
+                QScrollArea { border: none; background: transparent; min-height: 300px; }
+                QWidget { background: transparent; }
+            </style>
+        </widget>
+        <controller type="WorkflowEditorController" />
+    </tab>
+</Config>

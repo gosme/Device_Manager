@@ -8,7 +8,7 @@
             <text>Jira Dashboard</text>
             <font_size>30</font_size>
             <font_weight>bold</font_weight>
-            <alignment>center</alignment>
+            <alignment>left</alignment>
         </widget>
         
         <row>
@@ -74,6 +74,7 @@
                 <text>Jira Ticket Details</text>
                 <font_size>30</font_size>
                 <font_weight>bold</font_weight>
+                <alignment>left</alignment>
             </widget>
             <stretch />
             <widget type="QPushButton" role="btn_open_jira">

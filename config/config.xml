@@ -141,7 +141,7 @@
             </custom>
         </theme>
         <font>
-            <name>Segoe UI Black</name>
+            <name>Calibri</name>
             <title>
                 <size>24</size>
                 <weight>bold</weight>
@@ -172,4 +172,9 @@
     <chat>
         <enabled>true</enabled>
     </chat>
+    <workflow>
+        <enabled>false</enabled>
+        <task_limit>10</task_limit>
+    </workflow>
+    <app_data />
 </config>

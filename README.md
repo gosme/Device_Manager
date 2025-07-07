@@ -25,11 +25,13 @@ This repository contains a PySide6-based GUI application that provides a custom 
 - **Architectural Enhancements:** Decoupled UI controllers, core helpers, and logging backends for improved maintainability.
 - **PySide6 Migration:** Fully transitioned to PySide6 for enhanced UI rendering and modern Qt6 support.
 - **Settings Management:** Dedicated Settings tab for configuring UI appearance and application preferences.
+- **Chat Integration:** Interactive Chat dashboard with dedicated UI controllers.
+- **Workflow Automation:** Build, save, and execute automated workflows through a dedicated UI.
 
 ## Requirements
 
 - **Operating System:** Windows, macOS, Linux (Ubuntu/Debian-based)
-- **Python:** Version 3.7 or higher
+- **Python:** Version 3.14 or higher
 - **Package Managers:** `pip` and `pipx`
 
 ## Installation
@@ -129,6 +131,10 @@ device-manager
    - Utilize automated mail and report compilers to streamline task updates.
 9. **Settings & Customization:**
    - Access the Settings tab to customize appearance and application-specific configurations.
+10. **Chat Dashboard:**
+    - Use the interactive Chat interface to communicate directly within the application environment.
+11. **Workflow Automation:**
+    - Navigate to the Workflow tab to construct, save, and manage customized sequential workflows.
 
 ## Licensing and Third-Party Notices
 This project is licensed under the MIT License. See the LICENSE file for details.

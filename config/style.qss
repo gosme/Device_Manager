@@ -1,0 +1,65 @@
+/* style.qss - Global styling for DeviceManager */
+
+/* Workflow Widgets: SavedWorkflowRow */
+QFrame#SavedWorkflowRow {
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+QFrame#SavedWorkflowRow QLabel {
+    border: none;
+    font-size: 16px;
+    padding: 10px;
+}
+QFrame#SavedWorkflowRow QPushButton {
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+QFrame#SavedWorkflowRow QPushButton#btn_delete {
+    background-color: #e74c3c;
+}
+
+/* Workflow Widgets: ExecutedWorkflowRow */
+QFrame#ExecutedWorkflowRow {
+    border-radius: 6px;
+    margin-bottom: 5px;
+}
+QFrame#ExecutedWorkflowRow QLabel {
+    border: none;
+    font-size: 14px;
+    padding: 5px;
+}
+QFrame#ExecutedWorkflowRow QPushButton {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 12px;
+    font-weight: bold;
+}
+
+/* Settings: Generic Cards */
+QFrame#SettingsCard {
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: transparent;
+    padding: 10px;
+    min-width: 400px;
+}
+QFrame#SettingsCard QLabel#CardTitle {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+QFrame#SettingsCard QLabel#FieldLabel {
+    font-size: 14px;
+    font-weight: bold;
+}
+QFrame#SettingsCard QLabel#FieldValue {
+    font-size: 14px;
+}
+QFrame#SettingsCard QLabel#FieldSubLabel {
+    font-size: 13px;
+}

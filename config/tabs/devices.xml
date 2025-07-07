@@ -7,7 +7,7 @@
             <text>Devices Dashboard</text>
             <font_size>30</font_size>
             <font_weight>bold</font_weight>
-            <alignment>center</alignment>
+            <alignment>left</alignment>
         </widget>
         <row>
             <widget type="QLabel" role="subtitle">

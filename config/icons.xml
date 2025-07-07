@@ -31,5 +31,7 @@
         <Icon key="powershell" path="icons/powershell.png"/>
         <Icon key="gitbash" path="icons/gitbash.png"/>
         <Icon key="chat" path="icons/chat.png"/>
+        <Icon key="workflow" path="icons/workflow.png"/>
+        <Icon key="picker" path="icons/picker.png"/>
     </Icons>
 </Config>
