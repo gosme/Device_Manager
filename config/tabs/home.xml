@@ -145,6 +145,24 @@
                 </style>
             </widget>
         </card>
+        <card role="charts_card">
+            <style>
+                QFrame {
+                    border: 1px solid #ccc;
+                    border-radius: 8px;
+                    background-color: transparent;
+                    padding: 8px;
+                }
+            </style>
+            <widget type="QWidget" role="analytics_container">
+                <style>
+                    QWidget {
+                        background: transparent;
+                        min-height: 250px;
+                    }
+                </style>
+            </widget>
+        </card>
         <card role="agents_card">
             <style>
                 QFrame {

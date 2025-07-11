@@ -19,5 +19,14 @@
                 </Task>
             </Tasks>
         </Workflow>
+        <Workflow id="wf_c9a5f8aa">
+            <Name>a (Imported)</Name>
+            <Tasks>
+                <Task>
+                    <Action>Android commands</Action>
+                    <SubAction>android_1</SubAction>
+                </Task>
+            </Tasks>
+        </Workflow>
     </Workflows>
 </Config>

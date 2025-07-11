@@ -29,6 +29,9 @@
                     </style>
                 </widget>
                 <stretch />
+                <button type="button" role="btn_import_workflow">
+                    <text>Import</text>
+                </button>
                 <button type="button" role="btn_new_workflow">
                     <text>New Workflow</text>
                     <action>open_new_workflow_tab</action>
