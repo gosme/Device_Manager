@@ -60,6 +60,12 @@
             <widget type="QPushButton" role="btn_open_log">
                 <text>Open Log File</text>
             </widget>
+            <widget type="QPushButton" role="btn_send_to_ai">
+                <text>Send to AI (RCA)</text>
+                <style>
+                    QPushButton { background-color: purple; color: white; }
+                </style>
+            </widget>
             <stretch/>
         </row>
         <controller type="JournalLogsController" />
@@ -120,6 +126,12 @@
             </widget>
             <widget type="QPushButton" role="btn_open_log">
                 <text>Open Log File</text>
+            </widget>
+            <widget type="QPushButton" role="btn_send_to_ai">
+                <text>Send to AI (RCA)</text>
+                <style>
+                    QPushButton { background-color: purple; color: white; }
+                </style>
             </widget>
             <stretch/>
         </row>
