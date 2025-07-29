@@ -36,6 +36,19 @@
                 <color>#555</color>
                 <font_style>italic</font_style>
             </widget>
+            <row>
+                <widget type="QCheckBox" role="rca_mode">
+                    <text>RCA Mode (Root Cause Analysis)</text>
+                </widget>
+                <stretch />
+                <widget type="QPushButton" role="btn_attach_log">
+                    <text>Attach Log</text>
+                </widget>
+                <widget type="QLabel" role="attached_log_label">
+                    <text>No log attached</text>
+                    <color>#888888</color>
+                </widget>
+            </row>
             <widget type="ChatInput" role="agents_input">
                 <placeholder>Provide an intent/utterance or ask local AI for help.</placeholder>
             </widget>

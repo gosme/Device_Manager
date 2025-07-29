@@ -65,6 +65,11 @@
                     <text>Parsed logs</text>
                     <action>pull_parsed_logs()</action>
                 </button>
+                <button type="dashboard">
+                    <icon>:/icons/journal</icon>
+                    <text>AI Log Analysis</text>
+                    <action>analyze_log_with_ai()</action>
+                </button>
             </row>
         </card>
     </tab>
