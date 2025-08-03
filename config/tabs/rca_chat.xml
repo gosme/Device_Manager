@@ -4,13 +4,13 @@
         <background>white</background>
         <font_color>black</font_color>
         <widget type="QLabel" role="title">
-            <text>Local AI Assistant</text>
+            <text>RCA Log Analysis</text>
             <font_size>30</font_size>
             <font_weight>bold</font_weight>
             <alignment>left</alignment>
         </widget>
         <widget type="QLabel" role="message">
-            <text>A friendly helper running entirely on your device. Ask a question or provide an intent/utterance!</text>
+            <text>Dedicated Root Cause Analysis session. The log file is attached to this context.</text>
             <font_style>italic</font_style>
         </widget>
         <card role="agents_card">
@@ -37,9 +37,9 @@
                 <font_style>italic</font_style>
             </widget>
             <widget type="ChatInput" role="agents_input">
-                <placeholder>Provide an intent/utterance or ask local AI for help.</placeholder>
+                <placeholder>Ask a question about the log to find the root cause...</placeholder>
             </widget>
         </card>
-        <controller type="ChatController" />
+        <controller type="RCAChatController" />
     </tab>
 </Config>

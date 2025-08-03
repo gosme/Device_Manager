@@ -72,6 +72,32 @@
                 </button>
             </row>
         </card>
+        
+        <widget type="QLabel" text=" " />
+
+        <row>
+            <widget type="QLabel">
+                <text>RCA History</text>
+                <font_size>20</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <widget type="QLabel" role="rca_count">
+                <text>(0)</text>
+                <font_size>20</font_size>
+                <font_weight>bold</font_weight>
+            </widget>
+            <stretch />
+            <widget type="QPushButton" role="btn_refresh_rca">
+                <text>Refresh</text>
+            </widget>
+        </row>
+        <widget type="QScrollArea" role="rca_history_container">
+            <style>
+                QScrollArea { border: 1px solid #d0d0d0; border-radius: 4px; min-height: 150px; }
+            </style>
+        </widget>
+        
+        <controller type="LogsController" />
     </tab>
     
     <tab title="Terminal instance">
